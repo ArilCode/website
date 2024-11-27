@@ -1,0 +1,342 @@
+#backGround {
+  height: 100vh;
+  background: #6F6F70;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.loader {
+  --s: 25px;
+  --g :5px;  
+  
+  width: calc(2*(1.353*var(--s) + var(--g)));
+  aspect-ratio: 1;
+  background:
+    linear-gradient(#ff1818 0 0) left/50% 100% no-repeat,
+    conic-gradient(from -90deg at var(--s) calc(0.353*var(--s)),
+      #fff 135deg,#666 0 270deg,#aaa 0); 
+  background-blend-mode: multiply;
+  --_m:
+    linear-gradient(to bottom right,
+       #0000 calc(0.25*var(--s)),#000 0 calc(100% - calc(0.25*var(--s)) - 1.414*var(--g)),#0000 0),
+    conic-gradient(from -90deg at right var(--g) bottom var(--g),#000 90deg,#0000 0);
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  background-size:   50% 50%;
+  -webkit-mask-size: 50% 50%;
+          mask-size: 50% 50%;
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+  animation: l9 1.5s infinite;
+}
+@keyframes l9 {
+  0%,12.5%    {background-position:0% 0%,0 0}
+  12.6%,37.5% {background-position:100% 0%,0 0}
+  37.6%,62.5% {background-position:100% 100%,0 0}
+  62.6%,87.5% {background-position:0% 100%,0 0}
+  87.6%,100%  {background-position:0% 0%,0 0}
+}
+
+*, html {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: linear-gradient(90deg, #D05454, #389DAA);
+}
+
+/* navigation bar */
+
+.nav-name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(90deg, #5CAAD0, #C3834E);
+  width: 100vh;
+  height: 70px;
+  position: fixed;
+  display: flex;
+}
+
+.nav-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 100vh;
+  height: 40px;
+  box-shadow: 0 4px 3px 0 #48AEB1;
+}
+
+.name-parents {
+  display: flex;
+  flex-direction: row;
+  font-size: 1em;
+  padding: 15px;
+  text-transform: capitalize;
+  padding-left: 100px;
+}
+
+.first-name {
+  color: transparent;
+  font-weight: 900;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  -webkit-text-stroke: 1.5px lavender;
+  text-shadow: 3px 5px 1px dimgrey;
+}
+
+.last-name {
+  color: transparent;
+  font-weight: 600;
+  padding-left: 4px;
+  padding-bottom: 10px;
+  -webkit-text-stroke: 1.5px lavenderblush;
+  text-shadow: 3px 5px 1px dimgrey;
+}
+
+/* navigation button */
+
+.nav-parents {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bottom {
+  width: 45px;
+  height: 46px;
+  border: none;
+  background-color: #48AEB1;
+  padding: 10px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 2px #BA9531;
+  border: 1px solid black;
+}
+
+.nav-bottom:hover {
+  background-color: #BA9531;
+  box-shadow: 2px 2px 1px #48AEB1;
+}
+
+.img {
+  width: 20px;
+  height: 25px;
+}
+
+.menu {
+  height: 100vh;
+  width: 200px;
+  list-style: none;
+  background-color: #090A0599;
+  backdrop-filter: blur(3px);
+  position: fixed;
+  left: -200px;
+  transition: 0.5s;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.menu-open {
+  left: 0;
+}
+
+.menu li {
+  align-items: center;
+  display: flex;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.menu li:hover {
+  border-left: 10px solid #BA9531;
+  background: linear-gradient(90deg, #5CAAD0, #C3834E);
+  transition: 0.7s;
+}
+
+.menu li a {
+  display: block;
+  width: 100;
+  padding: 20px;
+  text-decoration: none;
+  color: #F7FCF6;
+  -webkit-text-stroke: .5px #48AEB1;
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: 700;
+  transition: 0.3s;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px
+}
+
+.menu li a:hover {
+  font-weight: 900;
+  color: #48AEB1;
+  transition: 0.9s;
+  -webkit-text-stroke: .3px lavender;
+}
+
+.menu li i {
+  margin-right: 5px;
+}
+
+/* double navigation*/
+
+.double-nav {
+  background-color: #48AEB1;
+  width: 350px;
+  height: 72px;
+}
+
+/* logo members */
+
+.members-logo {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px 0;
+  background: lightseagreen;
+  color: lavender;
+  height: 50px;
+}
+
+.members-logo div h3 {
+  font-size: 20px;
+  padding-top: 10px;
+  text-align: center;
+  -webkit-text-stroke: .5px #C3834E;
+}
+
+.members-logo div div {
+  margin-left: 87px;
+  margin-top: -3px; 
+  background: firebrick;
+  width: 185px;
+  height: 3px;
+}
+
+/* name's members */
+
+.wrapper {
+  height: 20rem;
+  border: 3px solid black;
+  margin-top: 150px;
+  border-radius: 30px;
+}
+
+.wrapper h3 {
+  text-align: center;
+  color: #889192;
+  -webkit-text-stroke: 1px blanchedalmond;
+}
+
+.wrapper ol {
+  padding-left: 4rem;
+  padding-bottom: 20px;
+}
+
+.wrapper ol li a{
+  font-weight: 600;
+  color: white;
+}
+
+.wrapper ol li a:hover {
+  color: coral;
+  text-shadow: 3px 3px 1px #666F6D;
+  font-weight: 900;
+}
+
+.wrapper ol li {
+  margin-top: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.cart-parent {
+  display: flex;
+  gap: 10px;
+  margin-top: 250px;
+  margin-left: 10px;
+}
+
+.carts {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 266px;
+  width: 10rem;
+  background: linear-gradient(90deg, #4DA8A1, #2C2B2B);
+}
+
+.carts img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.carts h4 {
+  text-align: center;
+  color: lavender;
+}
+
+.ref {
+  margin-top: 3px;
+  background: #5EA5C7;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.ref a {
+  color: #42413E;
+}
+
+.ref:hover {
+  background: #57D2BB;
+  color: #C49B29;
+}
+
+.ref a:hover {
+  color: #C49B29;
+}
+
+a {
+  text-decoration: none;
+}
+
+.carts div {
+  margin-top: -20px;
+  margin-left: 55px;
+  background: grey;
+  height: 20px;
+  width: 50px;
+  border-radius: 9px;
+}
+
+.background {
+  width: 57px;
+  height: 20px;
+  background: skyblue;
+  margin-left: 53px;
+  margin-top: -20px;
+  border-radius: 7px;
+}
+
+.info {
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #C4807E;
+  text-shadow: 3px 3px 1px #65696B;
+}
+
+.cart-parent-2 {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+.tes {
+  width: 350px;
+  height: 300px;
+}
